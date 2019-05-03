@@ -8,7 +8,7 @@ bool isIllegal = false;
 
 void evaluate(stack<int>& st, char op)
 {
-	// ­Y¦bpop¥X¨â­Ó¼Æ¦r«estack´N¤w¸gªÅªº¸Ü¡A¥Nªí«e§Ç»yªk¿ù»~
+	// è‹¥åœ¨popå‡ºå…©å€‹æ•¸å­—å‰stackå°±å·²ç¶“ç©ºçš„è©±ï¼Œä»£è¡¨å‰åºèªžæ³•éŒ¯èª¤
 	if (st.empty()) {
 		isIllegal = true;
 		return;
@@ -49,12 +49,12 @@ int main()
 		isIllegal = false;
 		int operand = 0;
 
-		// ±q«á©¹«e±½
+		// å¾žå¾Œå¾€å‰æŽƒ
 		for (int i = strlen(input) - 1; i >= 0; i--) {
 
 			switch (input[i])
 			{
-			case '+': // ¹Bºâ¤l
+			case '+': // é‹ç®—å­
 			case '-':
 			case '*':
 			case '/':
@@ -62,10 +62,10 @@ int main()
 				evaluate(s, input[i]);
 				break;
 
-			case ' ': // ªÅ¥Õ´N¸õ¹L
+			case ' ': // ç©ºç™½å°±è·³éŽ
 				break;
 
-			default: // ¹Bºâ¤¸
+			default: // é‹ç®—å…ƒ
 				int pow = 1;
 				while (input[i] >= '0' && input[i] <= '9') {
 					operand += (input[i] - '0') * pow;
